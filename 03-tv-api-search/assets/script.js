@@ -12,7 +12,7 @@ const updateInput = (e) => {
   console.log(input, 'input')
 }
 
-function getShows(){
+function getShows(inut){
   console.log('clicked')
 
     // 1. use querySelector to 'grab' your search element. Set it equal to a variable named inputValue.
@@ -20,7 +20,7 @@ function getShows(){
 
     // 2. Alter the url by subsituting the variable that you created in step two with the word girls
 
-    let API_URL = "https://api.tvmaze.com/search/shows?q=girls"
+    let API_URL = `https://api.tvmaze.com/search/shows?q=${input}`
 
 
     fetch(API_URL)
@@ -33,7 +33,7 @@ function getShows(){
 
             let showTitle = document.createElement("h3");
             let showPoster = document.createElement("img")
-            
+              
             showTitle.textContent = show.show.name
             showPoster.setAttribute("src", show.show.image.medium )
 
